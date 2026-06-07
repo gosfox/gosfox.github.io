@@ -59,7 +59,7 @@ header img:nth-child(4){ right: -30px; }
 /* SECTIONS */
 section{
     background-image: linear-gradient(to bottom, #18103b, #6051a3 );
-    height: 200px;
+    min-height: 200px;
     width: 24%;
     border-radius: 42px;
     margin: auto;
@@ -122,3 +122,84 @@ section h1{
 
 /* trivia */
 /*        */
+
+
+@media (max-width: 900px){
+
+    /* HEADER */
+
+    header{
+        width: 95%;
+        height: auto;
+        padding: 20px 0;
+    }
+
+    header h1{
+        font-size: 250%;
+        left: 0;
+        text-align: center;
+    }
+
+    header h2{
+        position: static;
+        font-size: 140%;
+        margin-top: 10px;
+    }
+
+    header img{
+        width: 20%;
+    }
+
+    header img:nth-child(1){
+        left: -10px;
+        top: 20px;
+    }
+
+    header img:nth-child(4){
+        right: -10px;
+        top: 20px;
+    }
+
+    /* SEKCJE */
+
+    #wrapper{
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    section{
+        width: 95%;
+        height: auto;
+        padding-bottom: 20px;
+    }
+
+    section h1{
+        font-size: 220%;
+    }
+
+    /* SOCIALS */
+
+    .social-content{
+        flex-direction: column;
+    }
+
+    #socials p{
+        width: 90%;
+        text-align: center;
+        margin: 0 auto 20px auto;
+    }
+
+    #socialbuttons{
+        width: 80%;
+        gap: 15px;
+    }
+
+    #socialbuttons a img{
+        width: 60px;
+    }
+
+    #socialbuttons a:nth-child(4),
+    #socialbuttons a:nth-child(5){
+        transform: translateX(0);
+    }
+}
