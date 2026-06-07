@@ -20,6 +20,18 @@ body::before{
     font-family: monospace;
 }
 
+body > * {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeUp 0.6s ease-out forwards;
+}
+
+body > *:nth-child(1){ animation-delay: 0.05s; }
+body > *:nth-child(2){ animation-delay: 0.1s; }
+body > *:nth-child(3){ animation-delay: 0.15s; }
+body > *:nth-child(4){ animation-delay: 0.2s; }
+body > *:nth-child(5){ animation-delay: 0.25s; }
+
 /* FONTS */
 
 .fleur-de-leah-regular {
@@ -79,6 +91,7 @@ h2{
     transition:0.3s;
     color:white;
     user-select: none;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, background-image 0.25s ease;
 }
 
 a{
@@ -86,6 +99,7 @@ a{
 }
 
 h2:hover{
+    transform: scale(1.05) translateX(8px);
     background-image: linear-gradient(to bottom, #08021f, #48388d);
     color: rgb(224, 215, 243);
     text-shadow: 3px 3px 5px black;
@@ -101,4 +115,15 @@ h2:hover{
     top: 80%;
     transform: translate(-50%, -50%);
     pointer-events:none;
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
