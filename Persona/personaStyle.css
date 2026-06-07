@@ -14,8 +14,17 @@
 /*       */
 
 body{
-    background-color: black;
     color:white;
+}
+
+body::before{
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: url("../background.gif");
+    background-size: 40%;
+    filter: brightness(40%);
+    z-index: -1;
 }
 
 /* HEADER */
