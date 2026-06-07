@@ -27,6 +27,34 @@ body::before{
     z-index: -1;
 }
 
+header,
+section{
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeUp 0.6s ease-out forwards;
+}
+
+header{
+    animation-delay: 0.05s;
+}
+
+section:nth-child(1){
+    animation-delay: 0.15s;
+}
+
+section:nth-child(2){
+    animation-delay: 0.25s;
+}
+
+section:nth-child(3){
+    animation-delay: 0.35s;
+}
+
+section:nth-child(4){
+    animation-delay: 0.45s;
+}
+
+
 /* HEADER */
 header{
     background-image: linear-gradient(to bottom, #6051a3, #18103b);
@@ -123,15 +151,130 @@ section h1{
 /*         */
 
 /* fandoms */
+#fandoms{
+    position: relative;
+    overflow: hidden;
+}
 
+#fandoms h1{
+    margin:0;
+}
+
+#fandoms img{
+    height: 140px;
+    position: absolute;
+    bottom: 0;
+    left: 10px;
+}
+
+#fandomSelected{
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+    background-color: #6051a3;
+    border-radius: 10px;
+    width: 120px;
+    height: 40px;
+    padding-bottom: 30px;
+
+}
+
+#fandoms button{
+    position:absolute;
+    border: none;
+    border-radius: 30px;
+    opacity: 0;
+    background-color: white;
+    height: 30px;
+    width: 30px;
+}
+
+#meyrin{
+    top: 90px;
+    left: 50px;
+}
+
+#bubble{
+    top: 71px;
+    left: 95px;
+}
+
+#akane{
+    top: 125px;
+    left: 84px;
+}
+
+#poe{
+    top: 110px;
+    left: 123px;
+}
+
+#clorinde{
+    top: 130px;
+    left: 175px;
+}
+
+#tsuchi{
+    top: 80px;
+    left: 210px;
+}
+
+#jiuyuan{
+    top: 135px;
+    left: 220px;
+}
+
+#anaxa{
+    top: 80px;
+    left: 250px;
+}
+
+#meyrin:hover, #bubble:hover, #akane:hover, #poe:hover, #clorinde:hover, #tsuchi:hover, #jiuyuan:hover, #anaxa:hover
+{ opacity: 0.67; }
+
+#fandomPar{ font-weight: bold; }
+
+#fandoms a{
+    color:white;
+    text-decoration: none;
+}
+
+#fandoms a:hover{
+    color: rgb(228, 222, 248);
+    text-decoration: underline;
+}
 /*         */
 
-/* skills and hobbies */
+/* skills and hobbies + other */
+#skillhobby h1, #other h1{ margin-bottom: 0; }
+#skillhobby ul, #other ul{
+    list-style-type: none;
+    padding-left: 5px;
+    font-size: 96%;
+    margin-top: 5px;
+}
+
+#skillhobby ul li::before, #other ul li::before{
+    content: "✮";
+    color: #c6b6ff;
+    margin-right: 10px;
+}
+
+#prpl{ color: rgb(178, 167, 231); }
 /*                    */
 
-/* trivia */
-/*        */
-
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 
 @media (max-width: 900px){
 
