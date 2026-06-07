@@ -1,0 +1,81 @@
+body{
+    color:white;
+    text-align: center;
+}
+
+body::before{
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: url("background.gif");
+    background-size: 40%;
+    filter: brightness(40%);
+    z-index: -1;
+}
+
+*{ font-family: monospace; }
+
+.fleur-de-leah-regular {
+  font-family: "Fleur De Leah", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.bitcount-grid-single{
+  font-family: "Bitcount Grid Single", system-ui;
+  font-optical-sizing: auto;
+}
+
+h1{
+    font-size: 700%;
+    background-image: linear-gradient(to bottom, #6051a3, #18103b);
+    border-radius: 50px;
+    display: inline-block;
+    padding: 0 8%;
+    text-decoration: underline;
+    text-indent: 6%;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
+
+img{
+    width: 11%;
+    position: absolute;
+}
+img:nth-child(1){ left: 32.8%; top: 7.5%;}
+img:nth-child(3){ right: 32.8%; top: 7.5%;}
+
+h2{
+    background-image: linear-gradient(to bottom, #18103b, #6051a3 );
+    border-radius: 50px;
+    padding: 5% 40px;
+}
+
+h2:hover{
+    background-image: linear-gradient(to bottom, #08021f, #48388d );
+    color: rgb(224, 215, 243);
+    text-shadow: 3px 3px 5px black;
+}
+
+#opts{
+    display:flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+    gap:20px;
+}
+
+#seal{
+    position: fixed;
+    width: 150px;
+    border-radius: 50px;
+
+    left: 50%;
+    top: 80%;
+    transform: translate(-50%, -50%);
+
+    pointer-events: none; /* żeby nie łapał hovera */
+}
