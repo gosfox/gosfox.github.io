@@ -26,7 +26,7 @@
                     discord: <strong>goslaw</strong>
                     <br>gmail: <strong>m.zych3333@gmail.com</strong>
                     <br>proton: <strong>gosfox@proton.me</strong>
-                    <br><br>~   ~   ~   click me   ---&gt;
+                    <br><br>~   ~   ~   click the icons
                 </p>
 
                 <div id="socialbuttons">
@@ -40,16 +40,71 @@
         </section>
         <section id="fandoms"><!--Fandoms-->
             <h1 class="bitcount-grid-single">Fandoms</h1>
-            <p>wip</p>
+            <img src="img/chars.png">
+            <div id="fandomSelected"><p id="fandomPar">~ Click a<br>character</p></div>
+            <button onclick="fandom(0);" id="meyrin" name="meyrin"></button>
+            <button onclick="fandom(1);" id="bubble" name="bubble"></button>
+            <button onclick="fandom(2);" id="akane" name="akane"></button>
+            <button onclick="fandom(3);" id="poe" name="poe"></button>
+            <button onclick="fandom(4);" id="clorinde" name="clorinde"></button>
+            <button onclick="fandom(5);" id="tsuchi" name="tsuchi"></button>
+            <button onclick="fandom(6);" id="jiuyuan" name="jiuyuan"></button>
+            <button onclick="fandom(7);" id="anaxa" name="anaxa"></button>
         </section>
         <section id="skillhobby"><!--Skills and hobbies-->
             <h1 class="bitcount-grid-single">Skills&Hobbies</h1>
-            <p>wip</p>
+            <ul>
+                <li><strong>Coding</strong> (mainly C#, Java, JS, HTML+CSS, Python)</li>
+                <li><strong>Reading</strong> (Poe's short stories, The Godfather, FNAF, Sherlock, formerly Warrior Cats, other crime novels)</li>
+                <li><strong>Drawing</strong> (Krita, Ibis Paint X - check Instagram)</li>
+                <li><strong>Gaming</strong> (Expedition33, Superliminal, HSR, GI, NTE, Brawl Stars)</li>
+                <li><strong>Linux</strong> (breaking my system) (jk I like making it pretty)</li>
+                <li><strong>Seal fangirling</strong> (2 banners and 9 plushies so far)</li>
+            </ul>
         </section>
-        <section id="trivia"><!--Trivia-->
+        <section id="other"><!--Other-->
             <h1 class="bitcount-grid-single">Other</h1>
-            <p>wip</p>
+            <ul>
+                <li>I LOVE <strong>seals</strong>. If you can't tell. Kyu.</li>
+                <li>My favourite colour is <span id="prpl"><strong>porpol</strong></span></li>
+                <li>I'm from <strong>Poland</strong>, born in <strong>UK</strong> :P</li>
+                <li>I loveee building stuff in <strong>Minecraft</strong></li>
+                <li>Shyly interested in <strong>astronomy</strong></li>
+                <li><strong>Linux</strong> larper (Fedora) (sorry not Arch btw this time)</li>
+            </ul>
         </section>
     </div>
+
+    <script>
+        const showFandom = document.getElementById("fandomPar");
+        function fandom(n){
+            switch (n){
+                case 0: //Kuroshitsuji - Mey-Rin
+                    showFandom.innerHTML = "<a target='_blank' href='https://en.wikipedia.org/wiki/Black_Butler'><strong>Black Butler</strong></a><br><a target='_blank' href='https://kuroshitsuji.fandom.com/wiki/Mey-Rin'>Mey-Rin</a>";
+                    break;
+                case 1: //The Amazing Digital Circus - Bubble
+                    showFandom.innerHTML = "<a target='_blank' href='https://en.wikipedia.org/wiki/The_Amazing_Digital_Circus'><strong>The Amazing<br>Digital Circus</strong></a><a target='_blank' href='https://tadc.fandom.com/wiki/Bubble'><br>Bubble</a>";
+                    break;
+                case 2: //Toilet-Bound Hanako-Kun - Akane
+                    showFandom.innerHTML = "<a target='_blank' href='https://en.wikipedia.org/wiki/Toilet-Bound_Hanako-kun'><strong>Toilet-Bound<br>Hanako-kun</strong></a><br><a target='_blank' href='https://hanako-kun.fandom.com/wiki/Aoi_Akane'>Akane</a>";
+                    break;
+                case 3: //Bungou Stray Dogs - Edgar Allan Poe
+                    showFandom.innerHTML = "<a target='_blank' href='https://en.wikipedia.org/wiki/Bungo_Stray_Dogs'><strong>Bungou<br>Stray Dogs</strong></a><br><a target='_blank' href='https://bungostraydogs.fandom.com/wiki/Edgar_Allan_Poe'>Edgar Allan Poe</a>";
+                    break;
+                case 4: //Genshin Impact - Clorinde
+                    showFandom.innerHTML = "<a target='_blank' href='https://en.wikipedia.org/wiki/Genshin_Impact'><strong>Genshin Impact</strong></a><br><a target='_blank' href='https://genshin-impact.fandom.com/wiki/Clorinde'>Clorinde</a>";
+                    break;
+                case 5: //Toilet-Bound Hanako-Kun - Tsuchigomori
+                    showFandom.innerHTML = "<a target='_blank' href='https://en.wikipedia.org/wiki/Toilet-Bound_Hanako-kun'><strong>Toilet-Bound<br>Hanako-kun</strong></a><br><a target='_blank' href='https://hanako-kun.fandom.com/wiki/Tsuchigomori'>Tsuchigomori</a>";
+                    break;
+                case 6: //Neverness To Everness - Jiuyuan
+                    showFandom.innerHTML = "<a target='_blank' href='https://en.wikipedia.org/wiki/Neverness_to_Everness'><strong>Neverness<br>To Everness</strong></a><br><a target='_blank' href='https://neverness-to-everness.fandom.com/wiki/Jiuyuan'>Jiuyuan</a>";
+                    break;
+                case 7: //Honkai: Star Rail - Anaxa
+                    showFandom.innerHTML = "<a target='_blank' href='https://en.wikipedia.org/wiki/Honkai:_Star_Rail'><strong>Honkai:<br>Star Rail</strong></a><br><a target='_blank' href='https://honkai-star-rail.fandom.com/wiki/Anaxa'>Anaxa</a>";
+                    break;
+            }
+        }
+    </script>
 </body>
 </html>
