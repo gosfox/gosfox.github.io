@@ -165,6 +165,9 @@ section h1{
     position: absolute;
     bottom: 0;
     left: 10px;
+    width: 70%;
+    height: auto;
+    max-width: 320px;
 }
 
 #fandomSelected{
@@ -192,43 +195,43 @@ section h1{
 }
 
 #meyrin{
-    top: 90px;
-    left: 50px;
+    top: 40%;
+    left: 10%;
 }
 
 #bubble{
-    top: 71px;
-    left: 95px;
+    top: 34%;
+    left: 22%;
 }
 
 #akane{
-    top: 125px;
-    left: 84px;
+    top: 58%;
+    left: 18.5%;
 }
 
 #poe{
-    top: 110px;
-    left: 123px;
+    top: 49%;
+    left: 28%;
 }
 
 #clorinde{
-    top: 130px;
-    left: 175px;
+    top: 58%;
+    left: 41%;
 }
 
 #tsuchi{
-    top: 80px;
-    left: 210px;
+    top: 40%;
+    left: 48%;
 }
 
 #jiuyuan{
-    top: 135px;
-    left: 220px;
+    top: 64%;
+    left: 51%;
 }
 
 #anaxa{
-    top: 80px;
-    left: 250px;
+    top: 40%;
+    left: 58%;
 }
 
 #meyrin:hover, #bubble:hover, #akane:hover, #poe:hover, #clorinde:hover, #tsuchi:hover, #jiuyuan:hover, #anaxa:hover
@@ -353,5 +356,9 @@ section h1{
     #socialbuttons a:nth-child(4),
     #socialbuttons a:nth-child(5){
         transform: translateX(0);
+    }
+
+    #fandomSelected{
+        top: 30%;
     }
 }
