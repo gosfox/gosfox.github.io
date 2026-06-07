@@ -1,3 +1,68 @@
-<h1>PAGE WIP</h1>
-<a href="Persona/persona.html"><h2>Persona page</h2></a>
-<a><h2>Portfolio</h2></a>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu</title>
+    <link href="indexStyle.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bitcount+Grid+Single:wght@100..900&family=Fleur+De+Leah&display=swap" rel="stylesheet">
+</head>
+<body>
+    <img src="Persona/img/left.png" alt="left image">
+    <h1 class="fleur-de-leah-regular">Menu</h1>
+    <img src="Persona/img/right.png" alt="right image">
+    <div id="opts">
+        <a href="Persona/persona.html"><h2 class="bitcount-grid-single">Persona page</h2></a>
+        <a href="Portfolio/portfolio.html"><h2 class="bitcount-grid-single">Portfolio [wip]</h2></a>
+    </div>
+    <img id="seal" src="sealbounce.gif" alt="seal">
+
+    <script>
+        const seal = document.getElementById("seal");
+
+        let x = window.innerWidth / 2;
+        let y = window.innerHeight * 0.8;
+
+        let vx = 0;
+        let vy = 0;
+
+        const speed = 18;
+        const safeDistance = 100;
+
+        document.addEventListener("mousemove", (e) => {
+            const dx = x - e.clientX;
+            const dy = y - e.clientY;
+            const dist = Math.sqrt(dx*dx + dy*dy);
+
+            if (dist < safeDistance) {
+                const angle = Math.atan2(dy, dx);
+
+                vx += Math.cos(angle) * speed;
+                vy += Math.sin(angle) * speed;
+            }
+        });
+
+        function update() {
+            vx *= 0.85;
+            vy *= 0.85;
+
+            x += vx;
+            y += vy;
+
+            const padding = 60;
+
+            x = Math.max(padding, Math.min(window.innerWidth - padding, x));
+            y = Math.max(padding, Math.min(window.innerHeight - padding, y));
+
+            seal.style.left = x + "px";
+            seal.style.top = y + "px";
+
+            requestAnimationFrame(update);
+        }
+
+        update();
+    </script>
+</body>
+</html>
