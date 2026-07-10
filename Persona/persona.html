@@ -1,110 +1,404 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gosfox/law</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bitcount+Grid+Single:wght@100..900&family=Fleur+De+Leah&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="personaStyle.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>GOSFOX // root@terminal</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bitcount+Grid+Single:wght@100..900&family=Fleur+De+Leah&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+<link href="style.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
 </head>
 <body>
-    <header>
-        <img src="img/left.png" alt="left image">
-        <h2 class="fleur-de-leah-regular whoami">--- Małgorzata Zych</h2>
-        <h1 class="bitcount-grid-single whoami">-- Gosfox</h1>
-        <img src="img/right.png" alt="right image">
-    </header>
 
-    <div id="wrapper">
-        <section id="socials"><!--Socials-->
-            <h1 class="bitcount-grid-single">Socials</h1>
+<div class="bg-grid"></div>
+<div class="scanlines"></div>
+<div class="noise-flicker"></div>
+<div class="vignette"></div>
 
-            <div class="social-content">
-                <p>
-                    discord: <strong>goslaw</strong>
-                    <br>gmail: <strong>m.zych3333@gmail.com</strong>
-                    <br>proton: <strong>gosfox@proton.me</strong>
-                    <br><br>~   ~   ~   click the icons
-                </p>
+<div id="boot">
+  <div class="boot-line">&gt; ACCESSING GOSFOX_NET...</div>
+  <div class="boot-line">&gt; DECRYPTING PROFILE SHARD...</div>
+  <div class="boot-line">&gt; LOADING SEALS.DLL...</div>
+  <div class="boot-line">&gt; ACCESS GRANTED_</div>
+</div>
 
-                <div id="socialbuttons">
-                    <a id="reddit" href="https://www.reddit.com/user/Goslaw__/" target="_blank"><img src="img/reddit.png" alt="reddit"></a>
-                    <a id="tiktok" href="https://www.tiktok.com/@goslaw_" target="_blank"><img src="img/tiktok.png" alt="tiktok"></a>
-                    <a id="spotify" href="https://open.spotify.com/user/313epx4ho7e73xkn2ixioxs2dtby" target="_blank"><img src="img/spotify.png" alt="spotify"></a>
-                    <a id="codewars" href="https://www.codewars.com/users/Goslaw" target="_blank"><img src="img/codewars.png" alt="codewars"></a>
-                    <a id="instagram" href="https://www.instagram.com/goslaw__/" target="_blank"><img src="img/instagram.png" alt="instagram"></a>
-                </div>
-            </div>
-        </section>
-        <section id="fandoms"><!--Fandoms-->
-            <h1 class="bitcount-grid-single">Fandoms</h1>
-            <img src="img/chars.png">
-            <div id="fandomSelected"><p id="fandomPar">~ Click a<br>character</p></div>
-            <button onclick="fandom(0);" id="meyrin" name="meyrin"></button>
-            <button onclick="fandom(1);" id="bubble" name="bubble"></button>
-            <button onclick="fandom(2);" id="akane" name="akane"></button>
-            <button onclick="fandom(3);" id="poe" name="poe"></button>
-            <button onclick="fandom(4);" id="clorinde" name="clorinde"></button>
-            <button onclick="fandom(5);" id="tsuchi" name="tsuchi"></button>
-            <button onclick="fandom(6);" id="jiuyuan" name="jiuyuan"></button>
-            <button onclick="fandom(7);" id="anaxa" name="anaxa"></button>
-        </section>
-        <section id="skillhobby"><!--Skills and hobbies-->
-            <h1 class="bitcount-grid-single">Skills&Hobbies</h1>
-            <ul>
-                <li><strong>Coding</strong> (mainly C#, Java, JS, HTML+CSS, Python)</li>
-                <li><strong>Reading</strong> (Poe's short stories, The Godfather, FNAF, Sherlock, formerly Warrior Cats, other crime novels)</li>
-                <li><strong>Drawing</strong> (Krita, Ibis Paint X - check Instagram)</li>
-                <li><strong>Gaming</strong> (Expedition33, Superliminal, HSR, GI, NTE, Brawl Stars)</li>
-                <li><strong>Linux</strong> (breaking my system) (jk I like making it pretty)</li>
-                <li><strong>Seal fangirling</strong> (2 banners and 9 plushies so far)</li>
-            </ul>
-        </section>
-        <section id="other"><!--Other-->
-            <h1 class="bitcount-grid-single">Other</h1>
-            <ul>
-                <li>I LOVE <strong>seals</strong>. If you can't tell. Kyu.</li>
-                <li>My favourite colour is <span id="prpl"><strong>porpol</strong></span></li>
-                <li>I'm from <strong>Poland</strong>, born in <strong>UK</strong> :P</li>
-                <li>I loveee building stuff in <strong>Minecraft</strong></li>
-                <li>Shyly interested in <strong>astronomy</strong></li>
-                <li><strong>Linux</strong> larper (Fedora) (sorry not Arch btw this time)</li>
-            </ul>
-        </section>
+<header>
+  <div class="frame">
+    <div class="portraits">
+      <img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExM2V6eHY3YnBxYTRycjJ0cmEyZ3V3bXI2aW95amg5azd1eHl5NTlocyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/xT5LMIciqRn5imbF7y/giphy.gif" alt="" onerror="this.style.opacity=0.12">
+      <div class="namewrap">
+        <h1 class="logo bitcount">GOSFOX</h1>
+        <h2 class="subtitle fleur">Małgorzata Zych</h2>
+      </div>
+      <img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExM2V6eHY3YnBxYTRycjJ0cmEyZ3V3bXI2aW95amg5azd1eHl5NTlocyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/xT5LMIciqRn5imbF7y/giphy.gif" alt="" onerror="this.style.opacity=0.12">
     </div>
+  </div>
+</header>
 
-    <script>
-        const showFandom = document.getElementById("fandomPar");
-        function fandom(n){
-            switch (n){
-                case 0: //Kuroshitsuji - Mey-Rin
-                    showFandom.innerHTML = "<a target='_blank' href='https://en.wikipedia.org/wiki/Black_Butler'><strong>Black Butler</strong></a><br><a target='_blank' href='https://kuroshitsuji.fandom.com/wiki/Mey-Rin'>Mey-Rin</a>";
-                    break;
-                case 1: //The Amazing Digital Circus - Bubble
-                    showFandom.innerHTML = "<a target='_blank' href='https://en.wikipedia.org/wiki/The_Amazing_Digital_Circus'><strong>The Amazing<br>Digital Circus</strong></a><a target='_blank' href='https://tadc.fandom.com/wiki/Bubble'><br>Bubble</a>";
-                    break;
-                case 2: //Toilet-Bound Hanako-Kun - Akane
-                    showFandom.innerHTML = "<a target='_blank' href='https://en.wikipedia.org/wiki/Toilet-Bound_Hanako-kun'><strong>Toilet-Bound<br>Hanako-kun</strong></a><br><a target='_blank' href='https://hanako-kun.fandom.com/wiki/Aoi_Akane'>Akane</a>";
-                    break;
-                case 3: //Bungou Stray Dogs - Edgar Allan Poe
-                    showFandom.innerHTML = "<a target='_blank' href='https://en.wikipedia.org/wiki/Bungo_Stray_Dogs'><strong>Bungou<br>Stray Dogs</strong></a><br><a target='_blank' href='https://bungostraydogs.fandom.com/wiki/Edgar_Allan_Poe'>Edgar Allan Poe</a>";
-                    break;
-                case 4: //Genshin Impact - Clorinde
-                    showFandom.innerHTML = "<a target='_blank' href='https://en.wikipedia.org/wiki/Genshin_Impact'><strong>Genshin Impact</strong></a><br><a target='_blank' href='https://genshin-impact.fandom.com/wiki/Clorinde'>Clorinde</a>";
-                    break;
-                case 5: //Toilet-Bound Hanako-Kun - Tsuchigomori
-                    showFandom.innerHTML = "<a target='_blank' href='https://en.wikipedia.org/wiki/Toilet-Bound_Hanako-kun'><strong>Toilet-Bound<br>Hanako-kun</strong></a><br><a target='_blank' href='https://hanako-kun.fandom.com/wiki/Tsuchigomori'>Tsuchigomori</a>";
-                    break;
-                case 6: //Neverness To Everness - Jiuyuan
-                    showFandom.innerHTML = "<a target='_blank' href='https://en.wikipedia.org/wiki/Neverness_to_Everness'><strong>Neverness<br>To Everness</strong></a><br><a target='_blank' href='https://neverness-to-everness.fandom.com/wiki/Jiuyuan'>Jiuyuan</a>";
-                    break;
-                case 7: //Honkai: Star Rail - Anaxa
-                    showFandom.innerHTML = "<a target='_blank' href='https://en.wikipedia.org/wiki/Honkai:_Star_Rail'><strong>Honkai:<br>Star Rail</strong></a><br><a target='_blank' href='https://honkai-star-rail.fandom.com/wiki/Anaxa'>Anaxa</a>";
-                    break;
-            }
-        }
-    </script>
+<!-- side widgets -->
+<div class="side-col side-col-left">
+  <div class="float-widget" id="clock-widget">
+    <div class="titlebar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="path">~/clock.exe</span></div>
+    <div class="body">
+      <div class="time-row"><span class="label">GOSFOX (PL)</span><span class="value" id="owner-time">--:--:--</span></div>
+      <div class="time-row"><span class="label">YOU</span><span class="value" id="visitor-time">--:--:--</span></div>
+    </div>
+  </div>
+
+  <div class="float-widget" id="spotify-widget">
+    <div class="titlebar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="path">~/spotify.exe</span></div>
+    <div class="body no-pad">
+      <iframe src="https://open.spotify.com/embed/playlist/5xhlexK51wZVKcMch8g4x0?utm_source=generator&si=6a5a2c58ef234b8b"
+              width="100%" height="152" frameborder="0"
+              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+              loading="lazy"></iframe>
+    </div>
+  </div>
+</div>
+
+<div class="side-col side-col-right">
+  <div class="float-widget" id="quote-widget">
+    <div class="titlebar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="path">~/quotes.exe</span></div>
+    <div class="body">
+      <p id="quote-text">// loading...</p>
+    </div>
+  </div>
+
+  <div class="float-widget" id="guestbook-widget">
+    <div class="titlebar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="path">~/guestbook.exe</span></div>
+    <div class="body">
+      <div id="gb-list" class="gb-list">// connecting...</div>
+      <form id="gb-form" class="gb-form">
+        <input id="gb-name" type="text" maxlength="24" placeholder="name" autocomplete="off">
+        <textarea id="gb-message" maxlength="240" placeholder="leave a message..." required></textarea>
+        <button type="submit">send &gt;</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<main id="grid">
+
+  <button class="card" onclick="openWin('socials')">
+    <div class="titlebar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="path">~/socials.exe</span></div>
+    <div class="body">
+      <h3 class="bitcount">Socials</h3>
+      <p class="hint"><span class="prompt">&gt;</span> discord // gmail // proton // signal // links</p>
+      <div class="openbtn">open window</div>
+    </div>
+  </button>
+
+  <button class="card" onclick="openWin('fandoms')">
+    <div class="titlebar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="path">~/fandoms.exe</span></div>
+    <div class="body">
+      <h3 class="bitcount">Fandoms</h3>
+      <p class="hint"><span class="prompt">&gt;</span> 8 characters loaded, click to inspect</p>
+      <div class="openbtn">open window</div>
+    </div>
+  </button>
+
+  <button class="card" onclick="openWin('skillhobby')">
+    <div class="titlebar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="path">~/skills.exe</span></div>
+    <div class="body">
+      <h3 class="bitcount">Skills&amp;Hobbies</h3>
+      <p class="hint"><span class="prompt">&gt;</span> code // draw // game // read // SEAL </p>
+      <div class="openbtn">open window</div>
+    </div>
+  </button>
+
+  <button class="card" onclick="openWin('other')">
+    <div class="titlebar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="path">~/other.exe</span></div>
+    <div class="body">
+      <h3 class="bitcount">Other</h3>
+      <p class="hint"><span class="prompt">&gt;</span> misc facts about the operator</p>
+      <div class="openbtn">open window</div>
+    </div>
+  </button>
+
+
+</main>
+
+<footer>root@gosfox-net <span class="blink">■</span> session active // click a card to launch program</footer>
+
+<!-- wins -->
+<div id="backdrop" onclick="if(event.target===this) closeWin();">
+
+  <section class="win" id="win-socials">
+    <div class="titlebar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="name">socials.exe — running</span><button class="closebtn" onclick="closeWin()">✕</button></div>
+    <div class="content">
+      <h1 class="sec-title bitcount">Socials</h1>
+      <div class="social-content">
+        <p>
+          discord: <strong>goslaw</strong><br>
+          gmail: <strong>m.zych3333@gmail.com</strong><br>
+          proton: <strong>gosfox@proton.me</strong><br>
+          signal: <strong>goslaw.69</strong><br><br>
+          <span class="prompt" style="color:var(--green)">&gt;</span> click the icons
+        </p>
+        <div id="socialbuttons">
+          <a href="https://bsky.app/profile/goslaw.bsky.social" target="_blank" rel="noopener"><img src="img/bluesky.png" alt="bluesky" onerror="this.parentElement.style.opacity=0.2"></a>
+          <a href="https://www.instagram.com/goslaw__/" target="_blank" rel="noopener"><img src="img/instagram.png" alt="instagram" onerror="this.parentElement.style.opacity=0.2"></a>
+          <a href="https://www.reddit.com/user/Goslaw__/" target="_blank" rel="noopener"><img src="img/reddit.png" alt="reddit" onerror="this.parentElement.style.opacity=0.2"></a>
+          <a href="https://open.spotify.com/user/313epx4ho7e73xkn2ixioxs2dtby" target="_blank" rel="noopener"><img src="img/spotify.png" alt="spotify" onerror="this.parentElement.style.opacity=0.2"></a>
+          <a href="https://www.codewars.com/users/Goslaw" target="_blank" rel="noopener"><img src="img/codewars.png" alt="codewars" onerror="this.parentElement.style.opacity=0.2"></a>
+          <a href="https://www.tiktok.com/@goslaw_" target="_blank" rel="noopener"><img src="img/tiktok.png" alt="tiktok" onerror="this.parentElement.style.opacity=0.2"></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="win" id="win-fandoms">
+    <div class="titlebar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="name">fandoms.exe — running</span><button class="closebtn" onclick="closeWin()">✕</button></div>
+    <div class="content">
+      <h1 class="sec-title bitcount">Fandoms</h1>
+      <div id="fandom-wrap">
+        <img class="chars" src="img/chars.png" alt="character lineup" onerror="this.style.display='none'">
+        <div id="fandomSelected"><p id="fandomPar">~ Click a character below</p></div>
+        <div id="fandomBtns">
+          <button onclick="fandom(0,this)">Mey-Rin</button>
+          <button onclick="fandom(1,this)">Bubble</button>
+          <button onclick="fandom(2,this)">Akane</button>
+          <button onclick="fandom(3,this)">Poe</button>
+          <button onclick="fandom(4,this)">Clorinde</button>
+          <button onclick="fandom(5,this)">Tsuchigomori</button>
+          <button onclick="fandom(6,this)">Jiuyuan</button>
+          <button onclick="fandom(7,this)">Anaxa</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="win" id="win-skillhobby">
+    <div class="titlebar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="name">skills.exe — running</span><button class="closebtn" onclick="closeWin()">✕</button></div>
+    <div class="content">
+      <h1 class="sec-title bitcount">Skills&amp;Hobbies</h1>
+      <ul>
+        <li><strong>Coding</strong> (mainly C#, Java, JS, HTML+CSS, Python)</li>
+        <li><strong>Reading</strong> (Poe's short stories, The Godfather, FNAF, Sherlock, formerly Warrior Cats, other crime novels)</li>
+        <li><strong>Drawing</strong> (Krita, Ibis Paint X — check Instagram)</li>
+        <li><strong>Gaming</strong> (Expedition33, Superliminal, HSR, GI, NTE, Brawl Stars)</li>
+        <li><strong>Linux</strong> (breaking my system) (jk I like making it pretty)</li>
+        <li><strong>Seal fangirling</strong> (2 banners and 10 plushies so far)</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="win" id="win-other">
+    <div class="titlebar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="name">other.exe — running</span><button class="closebtn" onclick="closeWin()">✕</button></div>
+    <div class="content">
+      <h1 class="sec-title bitcount">Other</h1>
+      <ul>
+        <li>I LOVE <strong>seals</strong>. If you can't tell. Kyu.</li>
+        <li>My favourite colour is <span id="prpl"><strong>porpol</strong></span></li>
+        <li>I'm from <strong>Poland</strong>, born in <strong>UK</strong> :P</li>
+        <li>I loveee building stuff in <strong>Minecraft</strong></li>
+        <li>Shyly interested in <strong>astronomy</strong></li>
+        <li><strong>Linux</strong> larper (Fedora) (sorry not Arch btw this time)</li>
+      </ul>
+    </div>
+  </section>
+
+</div>
+
+<script>
+// modal control
+let activeWin = null;
+function openWin(id){
+  closeWin();
+  const backdrop = document.getElementById('backdrop');
+  const win = document.getElementById('win-'+id);
+  backdrop.classList.add('show');
+  win.classList.add('active');
+  activeWin = win;
+  document.body.style.overflow = 'hidden';
+}
+function closeWin(){
+  const backdrop = document.getElementById('backdrop');
+  backdrop.classList.remove('show');
+  document.querySelectorAll('.win.active').forEach(w => w.classList.remove('active'));
+  document.body.style.overflow = '';
+  activeWin = null;
+}
+document.addEventListener('keydown', e => { if(e.key === 'Escape') closeWin(); });
+
+// fandom picker
+const showFandom = document.getElementById("fandomPar");
+const fandomData = [
+  ["Black Butler","https://en.wikipedia.org/wiki/Black_Butler","Mey-Rin","https://kuroshitsuji.fandom.com/wiki/Mey-Rin"],
+  ["The Amazing Digital Circus","https://en.wikipedia.org/wiki/The_Amazing_Digital_Circus","Bubble","https://tadc.fandom.com/wiki/Bubble"],
+  ["Toilet-Bound Hanako-kun","https://en.wikipedia.org/wiki/Toilet-Bound_Hanako-kun","Akane","https://hanako-kun.fandom.com/wiki/Aoi_Akane"],
+  ["Bungou Stray Dogs","https://en.wikipedia.org/wiki/Bungo_Stray_Dogs","Edgar Allan Poe","https://bungostraydogs.fandom.com/wiki/Edgar_Allan_Poe"],
+  ["Genshin Impact","https://en.wikipedia.org/wiki/Genshin_Impact","Clorinde","https://genshin-impact.fandom.com/wiki/Clorinde"],
+  ["Toilet-Bound Hanako-kun","https://en.wikipedia.org/wiki/Toilet-Bound_Hanako-kun","Tsuchigomori","https://hanako-kun.fandom.com/wiki/Tsuchigomori"],
+  ["Neverness To Everness","https://en.wikipedia.org/wiki/Neverness_to_Everness","Jiuyuan","https://neverness-to-everness.fandom.com/wiki/Jiuyuan"],
+  ["Honkai: Star Rail","https://en.wikipedia.org/wiki/Honkai:_Star_Rail","Anaxa","https://honkai-star-rail.fandom.com/wiki/Anaxa"]
+];
+function fandom(n, btn){
+  const [series, seriesUrl, name, nameUrl] = fandomData[n];
+  showFandom.innerHTML = `<a target="_blank" rel="noopener" href="${seriesUrl}"><strong>${series}</strong></a><br><a target="_blank" rel="noopener" href="${nameUrl}">${name}</a>`;
+  document.querySelectorAll('#fandomBtns button').forEach(b => b.classList.remove('active'));
+  if(btn) btn.classList.add('active');
+}
+
+// ============ clock - me vs visitor ============
+const OWNER_TIMEZONE = 'Europe/Warsaw';
+const ownerTimeEl = document.getElementById('owner-time');
+const visitorTimeEl = document.getElementById('visitor-time');
+
+function updateClocks(){
+  const now = new Date();
+  const timeOpts = { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false };
+
+  ownerTimeEl.textContent = now.toLocaleTimeString('pl-PL', { ...timeOpts, timeZone: OWNER_TIMEZONE });
+  visitorTimeEl.textContent = now.toLocaleTimeString(navigator.language || 'en-GB', timeOpts);
+}
+updateClocks();
+setInterval(updateClocks, 1000);
+
+// ============ quotes ============
+// ADD QUOTES HERE
+const quotes = [
+"I became insane, with long intervals of horrible sanity. ~ Edgar Allan Poe",
+"All that we see or seem is but a dream within a dream. ~ Edgar Allan Poe",
+"Those who dream by day are cognizant of many things which escape those who dream only by night. ~ Edgar Allan Poe",
+"Believe nothing you hear, and only one half that you see. ~ Edgar Allan Poe",
+"Sleep, those little slices of death - how I loathe them. ~ Edgar Allan Poe",
+"Never to suffer would never to have been blessed. ~ Edgar Allan Poe",
+"All religion, my friend, is simply evolved out of fraud, fear, greed, imagination, and poetry. ~ Edgar Allan Poe",
+"If you wish to forget anything on the spot, make a note that this thing is to be remembered. ~ Edgar Allan Poe",
+"I wish I could write as mysterious as a cat. ~ Edgar Allan Poe",
+"Deep in earth my love is lying / And I must weep alone. ~ Edgar Allan Poe",
+"And all I loved, I loved alone. ~ Edgar Allan Poe",
+"I felt that I breathed an atmosphere of sorrow. ~ Edgar Allan Poe",
+"I remained too much inside my head and ended up losing my mind. ~ Edgar Allan Poe",
+"Invisible things are the only realities. ~ Edgar Allan Poe",
+"See you tomorrow. ~ Tribios",
+"Life, death, time, and space…they all believed I would fail. ~ Zandik",
+"The moon really is closer than ever tonight. ~ Zandik",
+"So you rather wallow in this rotten decaying world? ~ Zandik",
+"In my view, many in this world do not deserve to be alive. ~ Zandik",
+"I weep for the departed. ~ Acheron",
+"If I don't slack off a work day is completely wasted. ~ Qingque",
+"As long as you know in your heart where you're heading, you're guaranteed to see the ending of your story. ~ Kafka",
+"When you have a chance to make a choice, make one that you know you won't regret. ~ Kafka",
+"Isn't sleep just a Rehearsal of Death? ~ Aventurine",
+"Life is nothing but an inevitable Necrosis. ~ Acheron",
+"The so called impossible is merely something that has yet to happen. ~ Acheron",
+"I will fight for myself, until everything burns to ashes! ~ Firefly",
+"Endless riddles, but the answer is nothing but a void. ~ Herta",
+"Every petal in life's garden will be swept away by the wind of time. ~ Ruan Mei",
+"A lie that everyone believes in becomes a reality! ~ Cipher",
+"I will walk with you, watch over you, and guide you on your path. ~ Sunday",
+"The moment when it all dies is so beautiful. ~ Constance",
+"Why does life slumber? ~ Sunday",
+"Intelligence is the ability to avoid doing work, yet getting the work done. ~ Linus Torvalds"
+];
+
+const quoteTextEl = document.getElementById('quote-text');
+let lastQuoteIndex = -1;
+
+function pickQuote(){
+  if(quotes.length === 0){
+    quoteTextEl.textContent = "// no quotes loaded yet";
+    quoteTextEl.classList.add('empty');
+    return;
+  }
+  quoteTextEl.classList.remove('empty');
+  let idx;
+  do {
+    idx = Math.floor(Math.random() * quotes.length);
+  } while(quotes.length > 1 && idx === lastQuoteIndex);
+  lastQuoteIndex = idx;
+  quoteTextEl.textContent = quotes[idx];
+}
+pickQuote();
+setInterval(pickQuote, 9000);
+
+// ============ guestbook (supabase) ============
+//ik ik visible key but i couldnt bother
+const SUPABASE_URL = "https://alcznrdtapsoxvddbuzt.supabase.co";
+const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFsY3pucmR0YXBzb3h2ZGRidXp0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODM3MDQ1ODUsImV4cCI6MjA5OTI4MDU4NX0.8wgmqGzqswK2Vckp7vOr3qtWcoGPqMjED035wn5OgX0E";
+
+const gbList = document.getElementById('gb-list');
+const gbForm = document.getElementById('gb-form');
+const gbName = document.getElementById('gb-name');
+const gbMessage = document.getElementById('gb-message');
+
+function escapeHtml(str){
+  const div = document.createElement('div');
+  div.textContent = str;
+  return div.innerHTML;
+}
+
+function timeAgo(dateStr){
+  const diff = Math.floor((Date.now() - new Date(dateStr).getTime()) / 1000);
+  if(diff < 60) return "just now";
+  if(diff < 3600) return Math.floor(diff/60) + "m ago";
+  if(diff < 86400) return Math.floor(diff/3600) + "h ago";
+  return Math.floor(diff/86400) + "d ago";
+}
+
+function renderEntries(entries){
+  if(!entries || entries.length === 0){
+    gbList.innerHTML = '<p class="gb-empty">// no messages yet, be the first</p>';
+    return;
+  }
+  gbList.innerHTML = entries.map(e => `
+    <div class="gb-entry">
+      <div class="gb-meta"><span class="gb-name">${escapeHtml(e.name || 'anon')}</span><span class="gb-time">${timeAgo(e.created_at)}</span></div>
+      <div class="gb-msg">${escapeHtml(e.message)}</div>
+    </div>
+  `).join('');
+}
+
+let supabaseClient = null;
+if(SUPABASE_URL.startsWith('http') && window.supabase){
+  supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+} else {
+  gbList.innerHTML = '<p class="gb-empty">// guestbook not configured yet</p>';
+}
+
+async function loadEntries(){
+  if(!supabaseClient) return;
+  const { data, error } = await supabaseClient
+    .from('guestbook')
+    .select('*')
+    .order('created_at', { ascending: false })
+    .limit(20);
+  if(error){
+    gbList.innerHTML = '<p class="gb-empty">// connection error, check console</p>';
+    console.error(error);
+    return;
+  }
+  renderEntries(data);
+}
+
+gbForm.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  if(!supabaseClient) return;
+  const name = gbName.value.trim();
+  const message = gbMessage.value.trim();
+  if(!message) return;
+  const submitBtn = gbForm.querySelector('button');
+  submitBtn.disabled = true;
+  const { error } = await supabaseClient.from('guestbook').insert([{ name: name || 'anon', message }]);
+  submitBtn.disabled = false;
+  if(error){ console.error(error); return; }
+  gbMessage.value = '';
+  loadEntries();
+});
+
+if(supabaseClient){
+  loadEntries();
+  // live refresh when anyone (including other visitors) posts a new entry
+  supabaseClient
+    .channel('guestbook-changes')
+    .on('postgres_changes', { event: 'INSERT', schema: 'public', table: 'guestbook' }, () => loadEntries())
+    .subscribe();
+}
+</script>
+
 </body>
 </html>
