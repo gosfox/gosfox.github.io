@@ -1,70 +1,129 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menu</title>
-    <link href="indexStyle.css" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bitcount+Grid+Single:wght@100..900&family=Fleur+De+Leah&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>GOSFOX // menu</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bitcount+Grid+Single:wght@100..900&family=Fleur+De+Leah&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+<link href="indexStyle.css" rel="stylesheet">
 </head>
 <body>
-    <header class="title-wrap">
-        <img src="Persona/img/left.png" alt="left image">
-        <h1 class="fleur-de-leah-regular">Menu</h1>
-        <img src="Persona/img/right.png" alt="right image">
-    </header>
-    <div id="opts">
-        <a href="Persona/persona.html"><h2 class="bitcount-grid-single">Persona page</h2></a>
-        <a href="Portfolio/portfolio.html"><h2 class="bitcount-grid-single">Portfolio [wip]</h2></a>
+
+<div class="bg-grid"></div>
+<div class="scanlines"></div>
+<div class="noise-flicker"></div>
+<div class="vignette"></div>
+
+<div id="boot">
+  <div class="boot-line">&gt; ACCESSING GOSFOX_NET...</div>
+  <div class="boot-line">&gt; LOADING MENU.DLL...</div>
+  <div class="boot-line">&gt; MOUNTING PAGES...</div>
+  <div class="boot-line">&gt; ACCESS GRANTED_</div>
+</div>
+
+<header>
+  <div class="frame">
+    <div class="portraits">
+      <img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExM2V6eHY3YnBxYTRycjJ0cmEyZ3V3bXI2aW95amg5azd1eHl5NTlocyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/xT5LMIciqRn5imbF7y/giphy.gif" alt="" onerror="this.style.opacity=0.12">
+      <div class="namewrap">
+        <h1 class="logo bitcount">GOSFOX</h1>
+        <h2 class="subtitle fleur">Menu</h2>
+      </div>
+      <img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExM2V6eHY3YnBxYTRycjJ0cmEyZ3V3bXI2aW95amg5azd1eHl5NTlocyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/xT5LMIciqRn5imbF7y/giphy.gif" alt="" onerror="this.style.opacity=0.12">
     </div>
-    <img id="seal" src="sealbounce.gif" alt="seal">
+  </div>
+</header>
 
-    <script>
-        const seal = document.getElementById("seal");
+<main id="opts">
 
-        let x = window.innerWidth / 2;
-        let y = window.innerHeight * 0.8;
+  <a class="card" href="Persona/persona.html">
+    <div class="titlebar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="path">~/persona.exe</span></div>
+    <div class="body">
+      <h3 class="bitcount">Persona page</h3>
+      <p class="hint"><span class="prompt">&gt;</span> who I am, socials, fandoms &amp; more</p>
+      <div class="openbtn">open window</div>
+    </div>
+  </a>
 
-        let vx = 0;
-        let vy = 0;
+  <a class="card" href="Portfolio/portfolio.html">
+    <div class="titlebar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="path">~/portfolio.exe [wip]</span></div>
+    <div class="body">
+      <h3 class="bitcount">Portfolio</h3>
+      <p class="hint"><span class="prompt">&gt;</span> work in progress</p>
+      <div class="openbtn">open window</div>
+    </div>
+  </a>
 
-        const speed = 18;
-        const safeDistance = 100;
+  <a class="card" href="Commissions/commissions.html">
+    <div class="titlebar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="path">~/commissions.exe [wip]</span></div>
+    <div class="body">
+      <h3 class="bitcount">Commissions</h3>
+      <p class="hint"><span class="prompt">&gt;</span> work in progress</p>
+      <div class="openbtn">open window</div>
+    </div>
+  </a>
 
-        document.addEventListener("mousemove", (e) => {
-            const dx = x - e.clientX;
-            const dy = y - e.clientY;
-            const dist = Math.sqrt(dx*dx + dy*dy);
+  <a class="card" href="Unknown/unknown.html">
+    <div class="titlebar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="path">~/unknown.exe [wip]</span></div>
+    <div class="body">
+      <h3 class="bitcount">Unknown</h3>
+      <p class="hint"><span class="prompt">&gt;</span> work in progress</p>
+      <div class="openbtn">open window</div>
+    </div>
+  </a>
 
-            if (dist < safeDistance) {
-                const angle = Math.atan2(dy, dx);
+</main>
 
-                vx += Math.cos(angle) * speed;
-                vy += Math.sin(angle) * speed;
-            }
-        });
+<footer>root@gosfox-net <span class="blink">■</span> session active // pick a program to launch</footer>
 
-        function update() {
-            vx *= 0.85;
-            vy *= 0.85;
+<img id="seal" src="sealbounce.gif" alt="seal">
 
-            x += vx;
-            y += vy;
+<script>
+const seal = document.getElementById("seal");
 
-            const padding = 60;
+let x = window.innerWidth / 2;
+let y = window.innerHeight * 0.8;
 
-            x = Math.max(padding, Math.min(window.innerWidth - padding, x));
-            y = Math.max(padding, Math.min(window.innerHeight - padding, y));
+let vx = 0;
+let vy = 0;
 
-            seal.style.left = x + "px";
-            seal.style.top = y + "px";
+const speed = 18;
+const safeDistance = 100;
 
-            requestAnimationFrame(update);
-        }
+document.addEventListener("mousemove", (e) => {
+  const dx = x - e.clientX;
+  const dy = y - e.clientY;
+  const dist = Math.sqrt(dx*dx + dy*dy);
 
-        update();
-    </script>
+  if (dist < safeDistance) {
+    const angle = Math.atan2(dy, dx);
+
+    vx += Math.cos(angle) * speed;
+    vy += Math.sin(angle) * speed;
+  }
+});
+
+function update() {
+  vx *= 0.85;
+  vy *= 0.85;
+
+  x += vx;
+  y += vy;
+
+  const padding = 60;
+
+  x = Math.max(padding, Math.min(window.innerWidth - padding, x));
+  y = Math.max(padding, Math.min(window.innerHeight - padding, y));
+
+  seal.style.left = x + "px";
+  seal.style.top = y + "px";
+
+  requestAnimationFrame(update);
+}
+
+update();
+</script>
 </body>
 </html>
