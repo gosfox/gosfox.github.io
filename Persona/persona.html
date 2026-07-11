@@ -56,6 +56,15 @@
               loading="lazy"></iframe>
     </div>
   </div>
+
+    <div class="float-widget" id="back-widget">
+    <div class="titlebar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="path">~/return.exe</span></div>
+    <div class="body" id="go-back-button-div">
+      <a href="https://gosfox.github.io/"><button type="submit">&lt; Home</button></a>
+      <a><button type="submit">&lt; Commissions</button></a>
+      <a><button type="submit">&lt; Portfolio</button></a>
+    </div>
+  </div>
 </div>
 
 <div class="side-col side-col-right">
@@ -298,6 +307,7 @@ const quotes = [
 
 const quoteTextEl = document.getElementById('quote-text');
 let lastQuoteIndex = -1;
+let interval = 9000;
 
 function pickQuote(){
   if(quotes.length === 0){
@@ -312,14 +322,19 @@ function pickQuote(){
   } while(quotes.length > 1 && idx === lastQuoteIndex);
   lastQuoteIndex = idx;
   quoteTextEl.textContent = quotes[idx];
+
+  const words = quotes[idx].split(' ');
+  const i = words.findIndex(w => w.includes('~'));
+  interval = (((i === -1 ? words.length : i) / 2) * 1000) + 3000; //avg wpm reading + 3s for register and author
+  console.log(interval);
 }
 pickQuote();
-setInterval(pickQuote, 9000);
+setInterval(pickQuote, interval);
 
 // ============ guestbook (supabase) ============
 //ik ik visible key but i couldnt bother
 const SUPABASE_URL = "https://alcznrdtapsoxvddbuzt.supabase.co";
-const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFsY3pucmR0YXBzb3h2ZGRidXp0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODM3MDQ1ODUsImV4cCI6MjA5OTI4MDU4NX0.8wgmqGzqswK2Vckp7vOr3qtWcoGPqMjED035wn5OgX0E";
+const SUPABASE_ANON_KEY = "sb_publishable_0HEq5ILqwP8LWizK_ucagQ_va0-Rc2c";
 
 const gbList = document.getElementById('gb-list');
 const gbForm = document.getElementById('gb-form');
@@ -389,15 +404,12 @@ gbForm.addEventListener('submit', async (e) => {
   gbMessage.value = '';
   loadEntries();
 });
-
+ 
 if(supabaseClient){
   loadEntries();
-  // live refresh when anyone (including other visitors) posts a new entry
-  supabaseClient
-    .channel('guestbook-changes')
-    .on('postgres_changes', { event: 'INSERT', schema: 'public', table: 'guestbook' }, () => loadEntries())
-    .subscribe();
+  setInterval(loadEntries, 20000);
 }
+
 </script>
 
 </body>
