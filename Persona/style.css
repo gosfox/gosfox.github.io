@@ -256,14 +256,16 @@ h2.subtitle{
 .gb-form input:focus, .gb-form textarea:focus{
   outline:none; border-color: var(--cyan); box-shadow: var(--glow-cyan);
 }
-.gb-form button{
+.gb-form button, #go-back-button-div button{
   align-self: flex-end;
-  background: transparent; border: 1px solid var(--violet); color: var(--violet);
+  background: transparent; border: 1px solid var(--violet); color: var(--green);
   border-radius: 6px; padding: 5px 12px; font-family:"Share Tech Mono", monospace;
   font-size:.75rem; cursor:pointer; transition: box-shadow .2s ease, background .2s ease;
 }
-.gb-form button:hover{ box-shadow: var(--glow-vio); background: rgba(124,92,255,.12); }
-.gb-form button:disabled{ opacity:.5; cursor:default; }
+.gb-form button:hover, #go-back-button-div button:hover{ box-shadow: var(--glow-vio); background: rgba(124,92,255,.12); }
+.gb-form button:disabled, #go-back-button-div button:disabled{ opacity:.5; cursor:default; }
+
+#go-back-button-div{ text-align: center; }
 
 @media (max-width: 1500px){
   .side-col{
