@@ -12,27 +12,25 @@
 </head>
 <body>
 
-<div class="bg-grid"></div>
+<canvas id="matrix-bg"></canvas>
 <div class="scanlines"></div>
 <div class="noise-flicker"></div>
 <div class="vignette"></div>
 
 <div id="boot">
-  <div class="boot-line">&gt; ACCESSING GOSFOX_NET...</div>
-  <div class="boot-line">&gt; DECRYPTING PROFILE SHARD...</div>
-  <div class="boot-line">&gt; LOADING SEALS.DLL...</div>
+  <div class="boot-line">&gt; ACCESSING GOSFOX.GITHUB.IO...</div>
   <div class="boot-line">&gt; ACCESS GRANTED_</div>
 </div>
 
 <header>
   <div class="frame">
     <div class="portraits">
-      <img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExM2V6eHY3YnBxYTRycjJ0cmEyZ3V3bXI2aW95amg5azd1eHl5NTlocyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/xT5LMIciqRn5imbF7y/giphy.gif" alt="" onerror="this.style.opacity=0.12">
+      <img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExa3QwNmwyenZ0cDZqdDZiYzVuaGoyeGE4cDBldDdmeHh1NG1yeDFkYSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/XowfXJ04W9VGkghP9A/giphy.gif" alt="" onerror="this.style.opacity=0.12">
       <div class="namewrap">
-        <h1 class="logo bitcount">GOSFOX</h1>
-        <h2 class="subtitle fleur">Małgorzata Zych</h2>
+        <h1 class="logo bitcount">₊˖ִGOSFOX˖ִ₊</h1>
+        <h2 class="subtitle fleur">. ݁₊ ⊹ . ݁Małgorzata Zych ݁. ⊹ ₊ ݁.</h2>
       </div>
-      <img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExM2V6eHY3YnBxYTRycjJ0cmEyZ3V3bXI2aW95amg5azd1eHl5NTlocyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/xT5LMIciqRn5imbF7y/giphy.gif" alt="" onerror="this.style.opacity=0.12">
+      <img src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExYzBla2podDE4dnRmeXF0enNxdWYxcGc2Z2NtYXc2bzdkcG5jcDVqcSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/bRdTqVJ9of7Ko/giphy.gif" alt="" onerror="this.style.opacity=0.12">
     </div>
   </div>
 </header>
@@ -40,7 +38,7 @@
 <!-- side widgets -->
 <div class="side-col side-col-left">
   <div class="float-widget" id="clock-widget">
-    <div class="titlebar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="path">~/clock.exe</span></div>
+    <div class="titlebar"><span class="path">~/clock.AppImage</span></div>
     <div class="body">
       <div class="time-row"><span class="label">GOSFOX (PL)</span><span class="value" id="owner-time">--:--:--</span></div>
       <div class="time-row"><span class="label">YOU</span><span class="value" id="visitor-time">--:--:--</span></div>
@@ -48,7 +46,7 @@
   </div>
 
   <div class="float-widget" id="spotify-widget">
-    <div class="titlebar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="path">~/spotify.exe</span></div>
+    <div class="titlebar"><span class="path">~/spotify.AppImage</span></div>
     <div class="body no-pad">
       <iframe src="https://open.spotify.com/embed/playlist/5xhlexK51wZVKcMch8g4x0?utm_source=generator&si=6a5a2c58ef234b8b"
               width="100%" height="152" frameborder="0"
@@ -58,26 +56,24 @@
   </div>
 
     <div class="float-widget" id="back-widget">
-    <div class="titlebar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="path">~/return.exe</span></div>
+    <div class="titlebar"><span class="path">~/return.AppImage</span></div>
       <div class="body" id="go-back-button-div">
         <a href="https://gosfox.github.io/">&lt; Home</a>
-        <a href="https://gosfox.github.io/Commissions/commissions.html">&lt; Commissions</a>
         <a href="https://gosfox.github.io/Portfolio/portfolio.html">&lt; Portfolio</a>
-        <a href="https://gosfox.github.io/Library/library.html">&lt; Library</a>
       </div>
   </div>
 </div>
 
 <div class="side-col side-col-right">
   <div class="float-widget" id="quote-widget">
-    <div class="titlebar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="path">~/quotes.exe</span></div>
+    <div class="titlebar"><span class="path">~/quotes.AppImage</span></div>
     <div class="body">
       <p id="quote-text">// loading...</p>
     </div>
   </div>
 
   <div class="float-widget" id="guestbook-widget">
-    <div class="titlebar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="path">~/guestbook.exe</span></div>
+    <div class="titlebar"><span class="path">~/guestbook.AppImage</span></div>
     <div class="body">
       <div id="gb-list" class="gb-list">// connecting...</div>
       <form id="gb-form" class="gb-form">
@@ -92,7 +88,7 @@
 <main id="grid">
 
   <button class="card" onclick="openWin('socials')">
-    <div class="titlebar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="path">~/socials.exe</span></div>
+    <div class="titlebar"><span class="path">~/socials.AppImage</span></div>
     <div class="body">
       <h3 class="bitcount">Socials</h3>
       <p class="hint"><span class="prompt">&gt;</span> discord // gmail // proton // signal // links</p>
@@ -101,16 +97,16 @@
   </button>
 
   <button class="card" onclick="openWin('fandoms')">
-    <div class="titlebar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="path">~/fandoms.exe</span></div>
+    <div class="titlebar"><span class="path">~/fandoms.AppImage</span></div>
     <div class="body">
       <h3 class="bitcount">Fandoms</h3>
-      <p class="hint"><span class="prompt">&gt;</span> 8 characters loaded, click to inspect</p>
+      <p class="hint"><span class="prompt">&gt;</span> click to inspect</p>
       <div class="openbtn">open window</div>
     </div>
   </button>
 
   <button class="card" onclick="openWin('skillhobby')">
-    <div class="titlebar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="path">~/skills.exe</span></div>
+    <div class="titlebar"><span class="path">~/skills.AppImage</span></div>
     <div class="body">
       <h3 class="bitcount">Skills&amp;Hobbies</h3>
       <p class="hint"><span class="prompt">&gt;</span> code // draw // game // read // SEAL </p>
@@ -119,10 +115,10 @@
   </button>
 
   <button class="card" onclick="openWin('other')">
-    <div class="titlebar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="path">~/other.exe</span></div>
+    <div class="titlebar"><span class="path">~/other.AppImage</span></div>
     <div class="body">
       <h3 class="bitcount">Other</h3>
-      <p class="hint"><span class="prompt">&gt;</span> misc facts about the operator</p>
+      <p class="hint"><span class="prompt">&gt;</span> some other stuff about me</p>
       <div class="openbtn">open window</div>
     </div>
   </button>
@@ -136,13 +132,13 @@
 <div id="backdrop" onclick="if(event.target===this) closeWin();">
 
   <section class="win" id="win-socials">
-    <div class="titlebar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="name">socials.exe — running</span><button class="closebtn" onclick="closeWin()">✕</button></div>
+    <div class="titlebar"><span class="name">socials.AppImage — running</span><button class="closebtn" onclick="closeWin()">✕</button></div>
     <div class="content">
       <h1 class="sec-title bitcount">Socials</h1>
       <div class="social-content">
         <p>
           discord: <strong>goslaw</strong><br>
-          gmail: <strong>m.zych3333@gmail.com</strong><br>
+          official: <strong>zmalgorzata@proton.me</strong><br>
           proton: <strong>gosfox@proton.me</strong><br>
           signal: <strong>goslaw.69</strong><br><br>
           <span class="prompt" style="color:var(--green)">&gt;</span> click the icons
@@ -153,50 +149,45 @@
           <a href="https://www.reddit.com/user/Goslaw__/" target="_blank" rel="noopener"><img src="img/reddit.png" alt="reddit" onerror="this.parentElement.style.opacity=0.2"></a>
           <a href="https://open.spotify.com/user/313epx4ho7e73xkn2ixioxs2dtby" target="_blank" rel="noopener"><img src="img/spotify.png" alt="spotify" onerror="this.parentElement.style.opacity=0.2"></a>
           <a href="https://www.codewars.com/users/Goslaw" target="_blank" rel="noopener"><img src="img/codewars.png" alt="codewars" onerror="this.parentElement.style.opacity=0.2"></a>
-          <a href="https://www.tiktok.com/@goslaw_" target="_blank" rel="noopener"><img src="img/tiktok.png" alt="tiktok" onerror="this.parentElement.style.opacity=0.2"></a>
+          <a href="https://www.linkedin.com/in/ma%C5%82gorzata-zych-8a9179436/" target="_blank" rel="noopener"><img src="img/linkedin.jpg" alt="linkedin" onerror="this.parentElement.style.opacity=0.2"></a>
         </div>
       </div>
     </div>
   </section>
 
   <section class="win" id="win-fandoms">
-    <div class="titlebar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="name">fandoms.exe — running</span><button class="closebtn" onclick="closeWin()">✕</button></div>
+    <div class="titlebar"><span class="name">fandoms.AppImage — running</span><button class="closebtn" onclick="closeWin()">✕</button></div>
     <div class="content">
-      <h1 class="sec-title bitcount">Fandoms</h1>
-      <div id="fandom-wrap">
-        <img class="chars" src="img/chars.png" alt="character lineup" onerror="this.style.display='none'">
-        <div id="fandomSelected"><p id="fandomPar">~ Click a character below</p></div>
-        <div id="fandomBtns">
-          <button onclick="fandom(0,this)">Mey-Rin</button>
-          <button onclick="fandom(1,this)">Bubble</button>
-          <button onclick="fandom(2,this)">Akane</button>
-          <button onclick="fandom(3,this)">Poe</button>
-          <button onclick="fandom(4,this)">Clorinde</button>
-          <button onclick="fandom(5,this)">Tsuchigomori</button>
-          <button onclick="fandom(6,this)">Jiuyuan</button>
-          <button onclick="fandom(7,this)">Anaxa</button>
-        </div>
-      </div>
+      <h1 class="sec-title bitcount">Fandoms - wip</h1>
+      <ul>
+        <li>Genshin Impact</li>
+        <li>Honkai: Star Rail</li>
+        <li>Black Butler</li>
+        <li>Hanako</li>
+        <li>Warrior Cats</li>
+        <li>Expedition: 33</li>
+        <li>Fate Series</li>
+      </ul>
     </div>
   </section>
 
   <section class="win" id="win-skillhobby">
-    <div class="titlebar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="name">skills.exe — running</span><button class="closebtn" onclick="closeWin()">✕</button></div>
+    <div class="titlebar"><span class="name">skills.AppImage — running</span><button class="closebtn" onclick="closeWin()">✕</button></div>
     <div class="content">
       <h1 class="sec-title bitcount">Skills&amp;Hobbies</h1>
       <ul>
-        <li><strong>Coding</strong> (mainly C#, Java, JS, HTML+CSS, Python)</li>
-        <li><strong>Reading</strong> (Poe's short stories, The Godfather, FNAF, Sherlock, formerly Warrior Cats, other crime novels)</li>
+        <li><strong>Coding</strong> (mainly C#, Java, JS, HTML+CSS, PHP)</li>
+        <li><strong>Reading</strong> (Poe's short stories, The Godfather, FNAF, Sherlock, Warrior Cats, other crime novels)</li>
         <li><strong>Drawing</strong> (Krita, Ibis Paint X — check Instagram)</li>
-        <li><strong>Gaming</strong> (Expedition33, Superliminal, HSR, GI, NTE, Brawl Stars)</li>
+        <li><strong>Gaming</strong> (Expedition33, Superliminal, HSR, GI, Brawl Stars)</li>
         <li><strong>Linux</strong> (breaking my system) (jk I like making it pretty)</li>
-        <li><strong>Seal fangirling</strong> (2 banners and 10 plushies so far)</li>
+        <li><strong>Seal fangirling</strong> (2 banners and 12 plushies so far)</li>
       </ul>
     </div>
   </section>
 
   <section class="win" id="win-other">
-    <div class="titlebar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="name">other.exe — running</span><button class="closebtn" onclick="closeWin()">✕</button></div>
+    <div class="titlebar"><span class="name">other.AppImage — running</span><button class="closebtn" onclick="closeWin()">✕</button></div>
     <div class="content">
       <h1 class="sec-title bitcount">Other</h1>
       <ul>
@@ -213,6 +204,50 @@
 </div>
 
 <script>
+//bg
+(() => {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  const canvas = document.getElementById('matrix-bg');
+  const ctx = canvas.getContext('2d');
+
+  let w, h, columns, drops;
+  const fontSize = 16;
+  const chars = 'アイウエオカキクケコサシスセソタチツテトナニヌネノ0123456789ABCDEFΞΨΩ¥$#+*<>/\\|';
+  const colors = ['#7c5cff', '#9b7bff', '#c9b8ff'];
+
+  function resize() {
+    w = canvas.width = window.innerWidth;
+    h = canvas.height = window.innerHeight;
+    columns = Math.floor(w / fontSize);
+    drops = new Array(columns).fill(0).map(() => Math.random() * (h / fontSize));
+  }
+  window.addEventListener('resize', resize);
+  resize();
+
+  function draw() {
+    ctx.fillStyle = 'rgba(0,0,0,0.08)';
+    ctx.fillRect(0, 0, w, h);
+    ctx.font = fontSize + 'px "Share Tech Mono", monospace';
+
+    for (let i = 0; i < columns; i++) {
+      const text = chars[Math.floor(Math.random() * chars.length)];
+      const x = i * fontSize;
+      const y = drops[i] * fontSize;
+
+      ctx.fillStyle = colors[Math.floor(Math.random() * colors.length)];
+      ctx.shadowColor = ctx.fillStyle;
+      ctx.shadowBlur = 4;
+      ctx.fillText(text, x, y);
+      ctx.shadowBlur = 0;
+
+      if (y > h && Math.random() > 0.975) drops[i] = 0;
+      drops[i]++;
+    }
+  }
+  setInterval(draw, 50);
+})();
+
 // modal control
 let activeWin = null;
 function openWin(id){
@@ -285,7 +320,7 @@ const quotes = [
 "I remained too much inside my head and ended up losing my mind. ~ Edgar Allan Poe",
 "Invisible things are the only realities. ~ Edgar Allan Poe",
 "See you tomorrow. ~ Tribios",
-"Life, death, time, and space… they all believed I would fail. ~ Zandik",
+"Life, death, time, and space…they all believed I would fail. ~ Zandik",
 "The moon really is closer than ever tonight. ~ Zandik",
 "So you rather wallow in this rotten decaying world? ~ Zandik",
 "In my view, many in this world do not deserve to be alive. ~ Zandik",
@@ -308,7 +343,7 @@ const quotes = [
 
 const quoteTextEl = document.getElementById('quote-text');
 let lastQuoteIndex = -1;
-let interval = 9000;
+let quoteTimer = null;
 
 function pickQuote(){
   if(quotes.length === 0){
@@ -326,11 +361,15 @@ function pickQuote(){
 
   const words = quotes[idx].split(' ');
   const i = words.findIndex(w => w.includes('~'));
-  interval = (((i === -1 ? words.length : i) / 2) * 1000) + 3000; //avg wpm reading + 3s for register and author
-  console.log(interval);
+  const wordCount = i === -1 ? words.length : i;
+
+  // ~200 wpm = ~3.33 of a word/s -> 300ms per word +5s author 
+  const interval = (wordCount / 3.33) * 1000 + 5000;
+
+  clearTimeout(quoteTimer);
+  quoteTimer = setTimeout(pickQuote, interval);
 }
 pickQuote();
-setInterval(pickQuote, interval);
 
 // ============ guestbook (supabase) ============
 //ik ik visible key but i couldnt bother
