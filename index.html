@@ -11,27 +11,25 @@
 </head>
 <body>
 
-<div class="bg-grid"></div>
+<canvas id="matrix-bg"></canvas>
 <div class="scanlines"></div>
 <div class="noise-flicker"></div>
 <div class="vignette"></div>
 
 <div id="boot">
-  <div class="boot-line">&gt; ACCESSING GOSFOX_NET...</div>
-  <div class="boot-line">&gt; LOADING MENU.DLL...</div>
-  <div class="boot-line">&gt; MOUNTING PAGES...</div>
+  <div class="boot-line">&gt; ACCESSING GOSFOX.GITHUB.IO...</div>
   <div class="boot-line">&gt; ACCESS GRANTED_</div>
 </div>
 
 <header>
   <div class="frame">
     <div class="portraits">
-      <img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExM2V6eHY3YnBxYTRycjJ0cmEyZ3V3bXI2aW95amg5azd1eHl5NTlocyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/xT5LMIciqRn5imbF7y/giphy.gif" alt="" onerror="this.style.opacity=0.12">
+      <img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExa3QwNmwyenZ0cDZqdDZiYzVuaGoyeGE4cDBldDdmeHh1NG1yeDFkYSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/XowfXJ04W9VGkghP9A/giphy.gif" alt="" onerror="this.style.opacity=0.12">
       <div class="namewrap">
-        <h1 class="logo bitcount">GOSFOX</h1>
-        <h2 class="subtitle fleur">Menu</h2>
+        <h1 class="logo bitcount">₊˖ִGOSFOX˖ִ₊</h1>
+        <h2 class="subtitle fleur">. ݁₊ ⊹ . ݁( Goslaw ) ݁. ⊹ ₊ ݁.</h2>
       </div>
-      <img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExM2V6eHY3YnBxYTRycjJ0cmEyZ3V3bXI2aW95amg5azd1eHl5NTlocyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/xT5LMIciqRn5imbF7y/giphy.gif" alt="" onerror="this.style.opacity=0.12">
+      <img src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExYzBla2podDE4dnRmeXF0enNxdWYxcGc2Z2NtYXc2bzdkcG5jcDVqcSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/bRdTqVJ9of7Ko/giphy.gif" alt="" onerror="this.style.opacity=0.12">
     </div>
   </div>
 </header>
@@ -39,16 +37,16 @@
 <main id="opts">
 
   <a class="card" href="Persona/persona.html">
-    <div class="titlebar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="path">~/persona.exe</span></div>
+    <div class="titlebar"><span class="path">~/persona.AppImage</span></div>
     <div class="body">
-      <h3 class="bitcount">Persona page</h3>
-      <p class="hint"><span class="prompt">&gt;</span> who I am, socials, fandoms &amp; more</p>
+      <h3 class="bitcount">Personal page</h3>
+      <p class="hint"><span class="prompt">&gt;</span> whoami</p>
       <div class="openbtn">open window</div>
     </div>
   </a>
 
   <a class="card" href="Portfolio/portfolio.html">
-    <div class="titlebar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="path">~/portfolio.exe [wip]</span></div>
+    <div class="titlebar"><span class="path">~/portfolio.AppImage</span></div>
     <div class="body">
       <h3 class="bitcount">Portfolio</h3>
       <p class="hint"><span class="prompt">&gt;</span> work in progress</p>
@@ -56,31 +54,16 @@
     </div>
   </a>
 
-  <a class="card" href="Commissions/commissions.html">
-    <div class="titlebar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="path">~/commissions.exe [wip]</span></div>
-    <div class="body">
-      <h3 class="bitcount">Commissions</h3>
-      <p class="hint"><span class="prompt">&gt;</span> work in progress</p>
-      <div class="openbtn">open window</div>
-    </div>
-  </a>
-
-  <a class="card" href="Library/library.html">
-    <div class="titlebar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="path">~/library.exe [wip]</span></div>
-    <div class="body">
-      <h3 class="bitcount">Library</h3>
-      <p class="hint"><span class="prompt">&gt;</span> work in progress</p>
-      <div class="openbtn">open window</div>
-    </div>
-  </a>
-
 </main>
 
-<footer>root@gosfox-net <span class="blink">■</span> session active // pick a program to launch</footer>
+<footer>seal@gosfox.github.io <span class="blink">■</span> session active // pick a program to launch</footer>
+
+<footer>play with da seal its so lonely (click/hover over)</footer>
 
 <img id="seal" src="sealbounce.gif" alt="seal">
 
 <script>
+  //this code doesnt even work properly
 const seal = document.getElementById("seal");
 
 let x = window.innerWidth / 2;
@@ -124,6 +107,54 @@ function update() {
 }
 
 update();
+
+//bg
+
+(() => {
+  const canvas = document.getElementById('matrix-bg');
+  const ctx = canvas.getContext('2d');
+
+  let w, h, columns, drops;
+  const fontSize = 16;
+  const chars = 'アイウエオカキクケコサシスセソタチツテトナニヌネノ0123456789ABCDEFΞΨΩ¥$#+*<>/\\|';
+
+  const colors = ['#7c5cff', '#9b7bff', '#c9b8ff'];
+
+function resize() {
+  w = canvas.width = window.innerWidth;
+  h = canvas.height = window.innerHeight;
+  columns = Math.floor(w / fontSize);
+  drops = new Array(columns).fill(0).map(() => Math.random() * (h / fontSize));
+}
+  window.addEventListener('resize', resize);
+  resize();
+
+  function draw() {
+    ctx.fillStyle = 'rgba(0,0,0,0.08)';
+    ctx.fillRect(0, 0, w, h);
+
+    ctx.font = fontSize + 'px "Share Tech Mono", monospace';
+
+    for (let i = 0; i < columns; i++) {
+      const text = chars[Math.floor(Math.random() * chars.length)];
+      const x = i * fontSize;
+      const y = drops[i] * fontSize;
+
+      ctx.fillStyle = colors[Math.floor(Math.random() * colors.length)];
+      ctx.shadowColor = ctx.fillStyle;
+      ctx.shadowBlur = 4;
+      ctx.fillText(text, x, y);
+      ctx.shadowBlur = 0;
+
+      if (y > h && Math.random() > 0.975) {
+        drops[i] = 0;
+      }
+      drops[i]++;
+    }
+  }
+
+  setInterval(draw, 50);
+})();
 </script>
 </body>
 </html>
