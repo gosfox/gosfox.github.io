@@ -20,8 +20,6 @@
 
 body{
   background:
-    radial-gradient(ellipse at 20% -10%, rgba(124,92,255,.16), transparent 45%),
-    radial-gradient(ellipse at 90% 10%, rgba(155,123,255,.12), transparent 40%),
     var(--bg-0);
   color: var(--text);
   font-family: "Share Tech Mono", monospace;
@@ -34,16 +32,11 @@ body{
 .bitcount{ font-family:"Bitcount Grid Single", system-ui; font-optical-sizing:auto; }
 
 /* ============ background ============ */
-.bg-grid{
+#matrix-bg{
   position: fixed; inset:0; z-index:-3;
-  background-image:
-    linear-gradient(rgba(124,92,255,.09) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(124,92,255,.09) 1px, transparent 1px);
-  background-size: 42px 42px;
-  mask-image: radial-gradient(ellipse at 50% 20%, black 10%, transparent 75%);
-  animation: gridPulse 6s ease-in-out infinite;
+  background: var(--bg-0);
+  opacity: .33;
 }
-@keyframes gridPulse{ 0%,100%{opacity:.55;} 50%{opacity:.9;} }
 
 .scanlines{
   position: fixed; inset:0; z-index:20; pointer-events:none;
@@ -93,20 +86,12 @@ body{
 }
 
 .boot-line:nth-child(1){
-  animation: showLine .01s linear 0s forwards, typeLine .33s steps(25,end) 0s forwards;
-  width:25ch;
+  animation: showLine .01s linear 0s forwards, typeLine .42s steps(31,end) 0s forwards;
+  width:31ch;
 }
 .boot-line:nth-child(2){
-  animation: showLine .01s linear .33s forwards, typeLine .38s steps(29,end) .33s forwards;
-  width:29ch;
-}
-.boot-line:nth-child(3){
-  animation: showLine .01s linear .71s forwards, typeLine .29s steps(22,end) .71s forwards;
-  width:22ch;
-}
-.boot-line:nth-child(4){
-  animation: showLine .01s linear 1.00s forwards, typeLine .22s steps(17,end) 1.00s forwards;
-  width:17ch; color:var(--cyan); border-color:var(--cyan);
+  animation: showLine .01s linear .32s forwards, typeLine .42s steps(24,end) .33s forwards;
+  width:24ch; color:var(--cyan); border-color:var(--cyan);
 }
 @keyframes showLine{ to{ opacity:1; } }
 @keyframes typeLine{ from{ width:0ch; } }
@@ -149,7 +134,7 @@ h1.logo{
   display:inline-block;
 }
 h1.logo::after{
-  content:"GOSFOX";
+  content:"₊˖ִGOSFOX˖ִ₊";
   position:absolute; left:0; top:0; width:100%;
   color: var(--magenta);
   clip-path: inset(0 0 0 0);
@@ -261,12 +246,13 @@ h2.subtitle{
   background: transparent; border: 1px solid var(--violet); color: var(--green);
   border-radius: 6px; padding: 5px 12px; font-family:"Share Tech Mono", monospace;
   font-size:.75rem; cursor:pointer; transition: box-shadow .2s ease, background .2s ease;
-  text-decoration: none; display: inline-block;
+    text-decoration: none; display: inline-block;
 }
 .gb-form button:hover, #go-back-button-div a:hover{ box-shadow: var(--glow-vio); background: rgba(124,92,255,.12); }
 .gb-form button:disabled, #go-back-button-div a:disabled{ opacity:.5; cursor:default; }
 
-#go-back-button-div{ text-align: center; }
+#go-back-button-div{ text-align: center;}
+
 
 @media (max-width: 1500px){
   .side-col{
@@ -315,10 +301,6 @@ h2.subtitle{
   padding: 10px 14px; border-bottom: 1px solid var(--line);
   background: rgba(0,0,0,.25);
 }
-.dot{ width:9px; height:9px; border-radius:50%; }
-.dot.r{ background: var(--magenta); box-shadow: var(--glow-mag); }
-.dot.y{ background: #ffd23f; box-shadow: 0 0 6px rgba(255,210,63,.8); }
-.dot.g{ background: var(--green); box-shadow: 0 0 6px rgba(236,232,251,.8); }
 .card .path{ margin-left:auto; font-size:.7rem; color:var(--muted); }
 
 .card .body{ padding: 20px 18px 24px; }
@@ -444,8 +426,15 @@ h2.subtitle{
 
 /* ============ footer ============ */
 footer{
-  text-align:center; padding: 4vh 5vw 6vh; color: var(--muted); font-size:.75rem;
+  text-align:center;
+  margin: 8px 35vw;
+  padding: 10px 0;
+  color: var(--muted); font-size:.75rem;
   opacity:0; animation: riseIn .35s ease forwards; animation-delay: 1.68s;
+  background: rgba(0,0,0,.55);
+  border-radius: 8px;
+  border: 1px solid rgba(124,92,255,0.2);
+  backdrop-filter: blur(2px);
 }
 footer .blink{ color: var(--green); }
 
