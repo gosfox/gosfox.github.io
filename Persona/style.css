@@ -114,7 +114,7 @@ header .frame{
   overflow:hidden;
 }
 header .frame::before{
-  content:"user@gosfox-net:~$ whoami";
+  content:"seal@gosfox.github.io:~$ whoami";
   position:absolute; top:10px; left:20px;
   font-size:.72rem; color: var(--muted); letter-spacing:.05em;
 }
