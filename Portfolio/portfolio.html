@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>MZ // portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bitcount+Grid+Single:wght@100..900&family=Fleur+De+Leah&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+<link href="portfolioStyle.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+</head>
+<body>
+
+<canvas id="matrix-bg"></canvas>
+<div class="scanlines"></div>
+<div class="noise-flicker"></div>
+<div class="vignette"></div>
+
+<div id="boot">
+  <div class="boot-line">&gt; ACCESSING GOSFOX.GITHUB.IO...</div>
+  <div class="boot-line">&gt; ACCESS GRANTED_</div>
+</div>
+
+<header>
+  <div class="frame">
+    <div class="portraits">
+      <img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExa3QwNmwyenZ0cDZqdDZiYzVuaGoyeGE4cDBldDdmeHh1NG1yeDFkYSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/XowfXJ04W9VGkghP9A/giphy.gif" alt="" onerror="this.style.opacity=0.12">
+      <div class="namewrap">
+        <h1 class="logo bitcount">₊˖ִMałgorzata Zych˖ִ₊</h1>
+        <h2 class="subtitle fleur">. ݁₊ ⊹ . ݁Programmer & artist ݁. ⊹ ₊ ݁.</h2>
+      </div>
+      <img src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExYzBla2podDE4dnRmeXF0enNxdWYxcGc2Z2NtYXc2bzdkcG5jcDVqcSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/bRdTqVJ9of7Ko/giphy.gif" alt="" onerror="this.style.opacity=0.12">
+    </div>
+  </div>
+</header>
+
+<!-- side widgets -->
+<div class="side-col side-col-left">
+  <div class="float-widget" id="clock-widget">
+    <div class="titlebar"><span class="path">~/clock.AppImage</span></div>
+    <div class="body">
+      <div class="time-row"><span class="label">GOSFOX (PL)</span><span class="value" id="owner-time">--:--:--</span></div>
+      <div class="time-row"><span class="label">YOU</span><span class="value" id="visitor-time">--:--:--</span></div>
+    </div>
+  </div>
+
+  <div class="float-widget" id="spotify-widget">
+    <div class="titlebar"><span class="path">~/spotify.AppImage</span></div>
+    <div class="body no-pad">
+      <iframe src="https://open.spotify.com/embed/playlist/5xhlexK51wZVKcMch8g4x0?utm_source=generator&si=6a5a2c58ef234b8b"
+              width="100%" height="152" frameborder="0"
+              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+              loading="lazy"></iframe>
+    </div>
+  </div>
+
+    <div class="float-widget" id="back-widget">
+    <div class="titlebar"><span class="path">~/return.AppImage</span></div>
+      <div class="body" id="go-back-button-div">
+        <a href="https://gosfox.github.io/">&lt; Home</a>
+        <a href="https://gosfox.github.io/Persona/persona.html">&lt; Personal</a>
+      </div>
+  </div>
+</div>
+
+<div class="side-col side-col-right">
+  <div class="float-widget" id="quote-widget">
+    <div class="titlebar"><span class="path">~/quotes.AppImage</span></div>
+    <div class="body">
+      <p id="quote-text">// loading...</p>
+    </div>
+  </div>
+
+  <div class="float-widget" id="guestbook-widget">
+    <div class="titlebar"><span class="path">~/guestbook.AppImage</span></div>
+    <div class="body">
+      <div id="gb-list" class="gb-list">// connecting...</div>
+      <form id="gb-form" class="gb-form">
+        <input id="gb-name" type="text" maxlength="24" placeholder="name" autocomplete="off">
+        <textarea id="gb-message" maxlength="240" placeholder="leave a message..." required></textarea>
+        <button type="submit">send &gt;</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<main id="grid">
+
+  <button class="card" onclick="openWin('projects')">
+    <div class="titlebar"><span class="path">~/projects.AppImage</span></div>
+    <div class="body">
+      <h3 class="bitcount">Projects</h3>
+      <p class="hint"><span class="prompt">&gt;</span> adwud // dollhut // more coming soon</p>
+      <div class="openbtn">open window</div>
+    </div>
+  </button>
+
+  <button class="card" onclick="openWin('contacts')">
+    <div class="titlebar"><span class="path">~/contact.AppImage</span></div>
+    <div class="body">
+      <h3 class="bitcount">Contact</h3>
+      <p class="hint"><span class="prompt">&gt;</span> click to inspect</p>
+      <div class="openbtn">open window</div>
+    </div>
+  </button>
+
+</main>
+
+<footer>root@gosfox-net <span class="blink">■</span> session active // click a card to launch program</footer>
+
+<!-- wins -->
+<div id="backdrop" onclick="if(event.target===this) closeWin();">
+
+  <section class="win" id="win-projects">
+    <div class="titlebar"><span class="name">projects.AppImage — running</span><button class="closebtn" onclick="closeWin()">✕</button></div>
+    <div class="content">
+      <h1 class="sec-title bitcount">Projects</h1>
+      <div class="projects-content">
+        <ul>
+            <li>
+                <strong>ADWUD</strong> (Aplikacja do wspomagania układania dyżyrów) - a polish windows C# WinForms .NET application created for helping with the process of assigning teacher's supervisory duties.<br><br>Is able to export to/inport from .xlsx, export to a stylized A3 .pdf, take data on its own from the specified schedule website, save and read data in .csv, include/exclude classes or teachers, count minutes based on teacher's hours, colour cells based on availability, visualize schedules in-app and more.<br><br>Most tools that do this do not have in mind constant class-wide internships or two buildings specification. To help our school, I built this app with the help of a classmate. It's still in development, though ready for early use and already proved to be helpful.<br><br>Future updates include a.o. giving access to other schools, mobile app and web viewer.
+                <br><br><span class="repo"><a target="_blank" href="https://github.com/gosfox/Aplikacja-do-Wspomagania-Uk-adania-Dy-ur-w">GitHub repo</a> (no README yet)</span><br>
+                <img src="img/adwud blur.png">
+            </li>
+            <li>
+                <strong>Dollhut</strong> - a more accessible version of Touyhou.se.<br><br>Still in very early development, but should be open for early use soon.<br><br>Touhouse is a good website. Excellent place for artists to keep their own characters. Except, to even join, you need to aquire an invite code. And then, when you do find one, getting lost is very easy. I've heard from multiple people who give out codes say, that the people they invited looked around and left. Of course, no hate to Toyhouse, but the amount of overwhelming options makes it hard to navigate.<br><br>To let people have a simpler place to keep their universes, I decided to make a "clone" in my style. You login via GitHub and keep your data as a repository. If anything happens to the site, your data is still safe on your account. This architecture also opens multiple paths for future growth, since the neccesary data is stored publicly. For the far future, I'm already thinking about everntually making a mobile app.
+                <br><br><span class="repo"><a target="_blank" href="https://gosfox.github.io/dollhut/">Website link</a></span>
+                <br><br><span class="repo"><a target="_blank" href="https://github.com/gosfox/dollhut">GitHub repo</a> (no README yet)</span><br>
+                <img src="noimageyet">
+            </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="win" id="win-contacts">
+    <div class="titlebar"><span class="name">contact.AppImage — running</span><button class="closebtn" onclick="closeWin()">✕</button></div>
+    <div class="content">
+      <h1 class="sec-title bitcount">Contact</h1>
+      <div class="contacts-content">
+        <p>
+          mail: <strong>zmalgorzata@proton.me</strong><br>
+          phone: <strong>+48 791 782 310</strong><br>
+          github: <strong><a target="_blank" href="https://github.com/gosfox">gosfox</a></strong><br>
+          socials: <strong><a target="_blank" href="https://gosfox.github.io/Persona/persona.html">here</a></strong>
+        </p>
+    </div>
+    </div>
+  </section>
+
+</div>
+
+<script>
+//bg
+(() => {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  const canvas = document.getElementById('matrix-bg');
+  const ctx = canvas.getContext('2d');
+
+  let w, h, columns, drops;
+  const fontSize = 16;
+  const chars = 'アイウエオカキクケコサシスセソタチツテトナニヌネノ0123456789ABCDEFΞΨΩ¥$#+*<>/\\|';
+  const colors = ['#7c5cff', '#9b7bff', '#c9b8ff'];
+
+  function resize() {
+    w = canvas.width = window.innerWidth;
+    h = canvas.height = window.innerHeight;
+    columns = Math.floor(w / fontSize);
+    drops = new Array(columns).fill(0).map(() => Math.random() * (h / fontSize));
+  }
+  window.addEventListener('resize', resize);
+  resize();
+
+  function draw() {
+    ctx.fillStyle = 'rgba(0,0,0,0.08)';
+    ctx.fillRect(0, 0, w, h);
+    ctx.font = fontSize + 'px "Share Tech Mono", monospace';
+
+    for (let i = 0; i < columns; i++) {
+      const text = chars[Math.floor(Math.random() * chars.length)];
+      const x = i * fontSize;
+      const y = drops[i] * fontSize;
+
+      ctx.fillStyle = colors[Math.floor(Math.random() * colors.length)];
+      ctx.shadowColor = ctx.fillStyle;
+      ctx.shadowBlur = 4;
+      ctx.fillText(text, x, y);
+      ctx.shadowBlur = 0;
+
+      if (y > h && Math.random() > 0.975) drops[i] = 0;
+      drops[i]++;
+    }
+  }
+  setInterval(draw, 50);
+})();
+
+// modal control
+let activeWin = null;
+function openWin(id){
+  closeWin();
+  const backdrop = document.getElementById('backdrop');
+  const win = document.getElementById('win-'+id);
+  backdrop.classList.add('show');
+  win.classList.add('active');
+  activeWin = win;
+  document.body.style.overflow = 'hidden';
+}
+function closeWin(){
+  const backdrop = document.getElementById('backdrop');
+  backdrop.classList.remove('show');
+  document.querySelectorAll('.win.active').forEach(w => w.classList.remove('active'));
+  document.body.style.overflow = '';
+  activeWin = null;
+}
+document.addEventListener('keydown', e => { if(e.key === 'Escape') closeWin(); });
+
+// ============ clock - me vs visitor ============
+const OWNER_TIMEZONE = 'Europe/Warsaw';
+const ownerTimeEl = document.getElementById('owner-time');
+const visitorTimeEl = document.getElementById('visitor-time');
+
+function updateClocks(){
+  const now = new Date();
+  const timeOpts = { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false };
+
+  ownerTimeEl.textContent = now.toLocaleTimeString('pl-PL', { ...timeOpts, timeZone: OWNER_TIMEZONE });
+  visitorTimeEl.textContent = now.toLocaleTimeString(navigator.language || 'en-GB', timeOpts);
+}
+updateClocks();
+setInterval(updateClocks, 1000);
+
+// ============ quotes ============
+// ADD QUOTES HERE
+const quotes = [
+"I became insane, with long intervals of horrible sanity. ~ Edgar Allan Poe",
+"All that we see or seem is but a dream within a dream. ~ Edgar Allan Poe",
+"Those who dream by day are cognizant of many things which escape those who dream only by night. ~ Edgar Allan Poe",
+"Believe nothing you hear, and only one half that you see. ~ Edgar Allan Poe",
+"Sleep, those little slices of death - how I loathe them. ~ Edgar Allan Poe",
+"Never to suffer would never to have been blessed. ~ Edgar Allan Poe",
+"All religion, my friend, is simply evolved out of fraud, fear, greed, imagination, and poetry. ~ Edgar Allan Poe",
+"If you wish to forget anything on the spot, make a note that this thing is to be remembered. ~ Edgar Allan Poe",
+"I wish I could write as mysterious as a cat. ~ Edgar Allan Poe",
+"Deep in earth my love is lying / And I must weep alone. ~ Edgar Allan Poe",
+"And all I loved, I loved alone. ~ Edgar Allan Poe",
+"I felt that I breathed an atmosphere of sorrow. ~ Edgar Allan Poe",
+"I remained too much inside my head and ended up losing my mind. ~ Edgar Allan Poe",
+"Invisible things are the only realities. ~ Edgar Allan Poe",
+"See you tomorrow. ~ Tribios",
+"Life, death, time, and space…they all believed I would fail. ~ Zandik",
+"The moon really is closer than ever tonight. ~ Zandik",
+"So you rather wallow in this rotten decaying world? ~ Zandik",
+"In my view, many in this world do not deserve to be alive. ~ Zandik",
+"I weep for the departed. ~ Acheron",
+"If I don't slack off a work day is completely wasted. ~ Qingque",
+"As long as you know in your heart where you're heading, you're guaranteed to see the ending of your story. ~ Kafka",
+"When you have a chance to make a choice, make one that you know you won't regret. ~ Kafka",
+"Isn't sleep just a Rehearsal of Death? ~ Aventurine",
+"Life is nothing but an inevitable Necrosis. ~ Acheron",
+"The so called impossible is merely something that has yet to happen. ~ Acheron",
+"I will fight for myself, until everything burns to ashes! ~ Firefly",
+"Endless riddles, but the answer is nothing but a void. ~ Herta",
+"Every petal in life's garden will be swept away by the wind of time. ~ Ruan Mei",
+"A lie that everyone believes in becomes a reality! ~ Cipher",
+"I will walk with you, watch over you, and guide you on your path. ~ Sunday",
+"The moment when it all dies is so beautiful. ~ Constance",
+"Why does life slumber? ~ Sunday",
+"Intelligence is the ability to avoid doing work, yet getting the work done. ~ Linus Torvalds"
+];
+
+const quoteTextEl = document.getElementById('quote-text');
+let lastQuoteIndex = -1;
+let quoteTimer = null;
+
+function pickQuote(){
+  if(quotes.length === 0){
+    quoteTextEl.textContent = "// no quotes loaded yet";
+    quoteTextEl.classList.add('empty');
+    return;
+  }
+  quoteTextEl.classList.remove('empty');
+  let idx;
+  do {
+    idx = Math.floor(Math.random() * quotes.length);
+  } while(quotes.length > 1 && idx === lastQuoteIndex);
+  lastQuoteIndex = idx;
+  quoteTextEl.textContent = quotes[idx];
+
+  const words = quotes[idx].split(' ');
+  const i = words.findIndex(w => w.includes('~'));
+  const wordCount = i === -1 ? words.length : i;
+
+  // ~200 wpm = ~3.33 of a word/s -> 300ms per word +5s author 
+  const interval = (wordCount / 3.33) * 1000 + 5000;
+
+  clearTimeout(quoteTimer);
+  quoteTimer = setTimeout(pickQuote, interval);
+}
+pickQuote();
+
+// ============ guestbook (supabase) ============
+//ik ik visible key but i couldnt bother
+const SUPABASE_URL = "https://alcznrdtapsoxvddbuzt.supabase.co";
+const SUPABASE_ANON_KEY = "sb_publishable_0HEq5ILqwP8LWizK_ucagQ_va0-Rc2c";
+
+const gbList = document.getElementById('gb-list');
+const gbForm = document.getElementById('gb-form');
+const gbName = document.getElementById('gb-name');
+const gbMessage = document.getElementById('gb-message');
+
+function escapeHtml(str){
+  const div = document.createElement('div');
+  div.textContent = str;
+  return div.innerHTML;
+}
+
+function timeAgo(dateStr){
+  const diff = Math.floor((Date.now() - new Date(dateStr).getTime()) / 1000);
+  if(diff < 60) return "just now";
+  if(diff < 3600) return Math.floor(diff/60) + "m ago";
+  if(diff < 86400) return Math.floor(diff/3600) + "h ago";
+  return Math.floor(diff/86400) + "d ago";
+}
+
+function renderEntries(entries){
+  if(!entries || entries.length === 0){
+    gbList.innerHTML = '<p class="gb-empty">// no messages yet, be the first</p>';
+    return;
+  }
+  gbList.innerHTML = entries.map(e => `
+    <div class="gb-entry">
+      <div class="gb-meta"><span class="gb-name">${escapeHtml(e.name || 'anon')}</span><span class="gb-time">${timeAgo(e.created_at)}</span></div>
+      <div class="gb-msg">${escapeHtml(e.message)}</div>
+    </div>
+  `).join('');
+}
+
+let supabaseClient = null;
+if(SUPABASE_URL.startsWith('http') && window.supabase){
+  supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+} else {
+  gbList.innerHTML = '<p class="gb-empty">// guestbook not configured yet</p>';
+}
+
+async function loadEntries(){
+  if(!supabaseClient) return;
+  const { data, error } = await supabaseClient
+    .from('guestbook')
+    .select('*')
+    .order('created_at', { ascending: false })
+    .limit(20);
+  if(error){
+    gbList.innerHTML = '<p class="gb-empty">// connection error, check console</p>';
+    console.error(error);
+    return;
+  }
+  renderEntries(data);
+}
+
+gbForm.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  if(!supabaseClient) return;
+  const name = gbName.value.trim();
+  const message = gbMessage.value.trim();
+  if(!message) return;
+  const submitBtn = gbForm.querySelector('button');
+  submitBtn.disabled = true;
+  const { error } = await supabaseClient.from('guestbook').insert([{ name: name || 'anon', message }]);
+  submitBtn.disabled = false;
+  if(error){ console.error(error); return; }
+  gbMessage.value = '';
+  loadEntries();
+});
+ 
+if(supabaseClient){
+  loadEntries();
+  setInterval(loadEntries, 20000);
+}
+
+</script>
+
+</body>
+</html>
